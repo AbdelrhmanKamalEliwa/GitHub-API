@@ -15,6 +15,9 @@
 		F4B4932123EDC76D002DC745 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4B4931F23EDC76D002DC745 /* ListTableViewCell.xib */; };
 		F4B4932423EDE903002DC745 /* APIEnvironmentParh.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4932323EDE903002DC745 /* APIEnvironmentParh.swift */; };
 		F4B4932623EDE94E002DC745 /* EndPointRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4932523EDE94E002DC745 /* EndPointRouter.swift */; };
+		F4B4932823EDFC81002DC745 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4932723EDFC81002DC745 /* Extentions.swift */; };
+		F4B4932B23EDFCB3002DC745 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4932A23EDFCB3002DC745 /* APIResult.swift */; };
+		F4B4932D23EDFCC4002DC745 /* httpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4932C23EDFCC4002DC745 /* httpMethod.swift */; };
 		F4D280B123D1EFAC004AF025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D280B023D1EFAC004AF025 /* AppDelegate.swift */; };
 		F4D280B323D1EFAC004AF025 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D280B223D1EFAC004AF025 /* SceneDelegate.swift */; };
 		F4D280B523D1EFAC004AF025 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D280B423D1EFAC004AF025 /* ViewController.swift */; };
@@ -59,6 +62,9 @@
 		F4B4931F23EDC76D002DC745 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		F4B4932323EDE903002DC745 /* APIEnvironmentParh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironmentParh.swift; sourceTree = "<group>"; };
 		F4B4932523EDE94E002DC745 /* EndPointRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointRouter.swift; sourceTree = "<group>"; };
+		F4B4932723EDFC81002DC745 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		F4B4932A23EDFCB3002DC745 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		F4B4932C23EDFCC4002DC745 /* httpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpMethod.swift; sourceTree = "<group>"; };
 		F4D280AD23D1EFAC004AF025 /* GitHub-API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D280B023D1EFAC004AF025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4D280B223D1EFAC004AF025 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 			children = (
 				F465B06923DD31FB004734C2 /* DataManager.swift */,
 				F4D280E323D1F07A004AF025 /* GitHubDataManager.swift */,
+				F4B4932923EDFCAA002DC745 /* Entities */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -176,7 +183,6 @@
 		F44D203523EDC4B200094795 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F4B4932223EDE8D7002DC745 /* Helpers */,
 				F44D202F23EDC38500094795 /* ReposList */,
 			);
 			path = Modules;
@@ -187,8 +193,18 @@
 			children = (
 				F4B4932323EDE903002DC745 /* APIEnvironmentParh.swift */,
 				F4B4932523EDE94E002DC745 /* EndPointRouter.swift */,
+				F4B4932723EDFC81002DC745 /* Extentions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F4B4932923EDFCAA002DC745 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F4B4932A23EDFCB3002DC745 /* APIResult.swift */,
+				F4B4932C23EDFCC4002DC745 /* httpMethod.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		F4D280A423D1EFAC004AF025 = {
@@ -216,11 +232,12 @@
 		F4D280AF23D1EFAC004AF025 /* GitHub-API */ = {
 			isa = PBXGroup;
 			children = (
+				F44D203023EDC3C400094795 /* Networking */,
+				F4B4932223EDE8D7002DC745 /* Helpers */,
 				F44D203523EDC4B200094795 /* Modules */,
 				F44D203423EDC45100094795 /* Assets */,
 				F44D203323EDC43700094795 /* Configurations */,
 				F44D203223EDC42100094795 /* Application */,
-				F44D203023EDC3C400094795 /* Networking */,
 			);
 			path = "GitHub-API";
 			sourceTree = "<group>";
@@ -527,8 +544,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B4932D23EDFCC4002DC745 /* httpMethod.swift in Sources */,
 				F4B4932023EDC76D002DC745 /* ListTableViewCell.swift in Sources */,
 				F4D280E623D1F361004AF025 /* DataModel.swift in Sources */,
+				F4B4932823EDFC81002DC745 /* Extentions.swift in Sources */,
+				F4B4932B23EDFCB3002DC745 /* APIResult.swift in Sources */,
 				F4D280B523D1EFAC004AF025 /* ViewController.swift in Sources */,
 				F4D280B123D1EFAC004AF025 /* AppDelegate.swift in Sources */,
 				F4B4932623EDE94E002DC745 /* EndPointRouter.swift in Sources */,

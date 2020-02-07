@@ -1,28 +1,12 @@
 
 import Foundation
 
-//new sth
-enum APIResult<T> {
-    case success(T)
-    case failure(Error?)
-    case decodingFailure(Error?)
-    case badRequest(Error?)
-}
-
-enum httpMethod: String {
-    case get = "GET"
-    case post = "POST"
-    case delete = "DELETE"
-    case put = "PUT"
-}
-
 
 class NetworkManager {
     
     public let session = URLSession(configuration: .default)
     
-    //MARK:- Send Request
-    //
+    //MARK: - DataTask Request
     func request<T: Codable>(url: URL, httpMethod: httpMethod, parameters: [String : String]?, headers: [String : String]?, completionHandler: @escaping(_ result: APIResult<T>) -> () ) -> URLSessionTask {
         
         var urlRequest: URLRequest = URLRequest(url: url)
