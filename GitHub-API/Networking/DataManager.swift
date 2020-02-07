@@ -1,7 +1,7 @@
 
 import Foundation
 
-
+//new sth
 enum APIResult<T> {
     case success(T)
     case failure(Error?)
