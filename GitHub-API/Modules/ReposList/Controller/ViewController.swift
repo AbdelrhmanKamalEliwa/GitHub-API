@@ -23,13 +23,19 @@ class ViewController: UIViewController {
                 print(data)
                 break
             case .failure(let error):
-                print(error)
+                if let safeError = error {
+                    print(safeError)
+                }
                 break
             case .decodingFailure(let error):
-                print(error)
+                if let safeError = error {
+                    print(safeError)
+                }
                 break
             case .badRequest(let error):
-                print(error)
+                if let safeError = error {
+                    print(safeError)
+                }
                 break
             }
         }
