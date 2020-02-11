@@ -20,7 +20,7 @@ enum APIEnvironmentPath {
         switch self
         {
         case .development:
-            return "http://"
+            return "https://"
         case .testing:
             return ""
         case .production:

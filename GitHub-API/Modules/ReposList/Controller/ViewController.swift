@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let networkManager = NetworkManager()
-        let _ = networkManager.request(url: EndPointRouter.getRepos, httpMethod: .get, parameters: nil, headers: nil) { (result: APIResult<[DataModel]>) in
+        let _ = networkManager.request(url: EndPointRouter.getRepo, httpMethod: .get, parameters: nil, headers: nil) { (result: APIResult<[DataModel]>) in
             switch result {
                 
             case .success(let data):
