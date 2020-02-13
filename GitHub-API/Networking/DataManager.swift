@@ -4,6 +4,9 @@ import Foundation
 
 class NetworkManager {
     
+//    delegate
+//    var delegate: NetworkManagerProtocol?
+    
     public let session = URLSession(configuration: .default)
     
     //MARK: - DataTask Request
@@ -50,6 +53,7 @@ class NetworkManager {
                     
                     let decodedData = try JSONDecoder().decode(T.self, from: jsonData)
                     completionHandler(.success(decodedData))
+//                    self.delegate?.didLoadData(myData: r)
                     
                 } catch (let error) {
                     completionHandler(.decodingFailure(error))
@@ -64,4 +68,9 @@ class NetworkManager {
     
 }
 
+// add delegate to the class
+//protocol NetworkManagerProtocol {
+//    func didLoadData(myData: APIResult<DataModel>)
+//    func didFailWithError(error: Error)
+//}
 
